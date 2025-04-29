@@ -1,0 +1,55 @@
+Um Makefile é um arquivo de texto que contém instruções sobre como construir e compilar um projeto, geralmente usado com o programa make. Ele define regras de compilação, dependências entre arquivos e comandos a serem executados. 
+
+
+Em resumo:
+
+    Finalidade:
+    Automatizar o processo de compilação de programas, especialmente em projetos grandes e complexos.
+
+    Estrutura:
+    Contém regras que especificam como criar arquivos de saída a partir de arquivos de entrada e dependências.
+
+    Ferramenta:
+    Usado em conjunto com a ferramenta make para interpretar e executar as instruções definidas no arquivo.
+
+Exemplo:
+
+Código
+
+    # Define a variável CC para o compilador C
+    CC = gcc
+
+    # Define a regra para compilar o programa principal
+    main: main.c
+    	$(CC) main.c -o main
+
+    # Define a regra para limpar o projeto
+    clean:
+    	rm -f main
+
+
+Detalhes:
+
+Regras:
+As regras definem a relação entre um alvo (um arquivo a ser criado) e suas dependências (arquivos que precisam ser modificados para que o alvo seja reconstruído). 
+
+Comandos:
+Os comandos são as instruções que o make executa para construir o alvo, como chamar o compilador, o vinculador, etc.
+
+Variáveis:
+As variáveis permitem definir valores que são usados em várias partes do Makefile, como o nome do compilador ou flags de compilação.
+
+Comentários:
+Começam com # e são usados para descrever as regras e comandos.
+
+
+Benefícios:
+
+Facilidade de manutenção:
+O Makefile permite que o processo de compilação seja descrito de forma clara e concisa, facilitando a sua manutenção e atualização. 
+
+Automatização:
+Permite automatizar o processo de compilação, reduzindo o tempo e os erros envolvidos. 
+
+Eficiência:
+O make usa informações sobre as últimas modificações dos arquivos para determinar quais arquivos precisam ser reconstruídos, evitando a recompilação desnecessária. 
