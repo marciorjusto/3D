@@ -1,0 +1,307 @@
+body {
+	font-family: "Droid Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
+  font-size: 1.6em; /* Bootstrap sets <html> font size to 62.5% of default; this restores the default size to the body */
+  line-height: 1.5em;
+}
+
+img {
+  max-width: 100%;
+  border: none;
+}
+
+/* Make text more readable by reducing max line length */
+.container{
+  max-width: 60em;
+}
+
+/* Allow some room for a sidebar */
+.container.wide {
+  max-width: 80em;
+}
+
+body p {
+  margin-bottom: 1.4em;
+}
+
+code, pre {
+	font: bold 100% Consolas, Menlo, "Lucida Console", "Source Code Pro", Monaco, monospace;
+	color: #4a4a4a;  /* dark gray */
+  border: none;
+}
+
+pre {
+  font-size: 80%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 0;
+  background: none;
+  overflow-y: hidden;  
+/* y overflow fixes weird vertical scrollbar flicker on Safari,but
+  might cause other problems, reconsider if needed  */
+}
+
+code {
+  white-space: pre-wrap; /* Allow inline code to break across lines */
+}
+
+pre code {
+  white-space: pre; /* Code blocks should not break across lines */
+  padding: 1em;
+  border-radius: 4px;
+  display: inline-block;
+  min-width: 100%;
+}
+
+.code-row, code, pre code {
+  background-color: #f5f5f5;
+}
+
+body a {
+  color: rgb(64, 120, 192);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Patua One";
+  line-height: 1.3em;
+}
+
+h1 { /* page title */
+	font-size: 250%;
+}
+
+h2 { /* section head */
+	color: #840000; /*  cardinal red */
+  font-size: 1.8em;
+  margin-top: 1.6em;
+}
+
+h4, div.faq_question{ /* FAQ stem */
+  color:  #333;
+	font-size: 1.4em;
+  margin-top: 1.3em;
+}
+
+blockquote {
+	font-size: 100%;
+	color: #918873; /* stanford cooca */
+}
+
+.container ol, .container ul {
+  margin: 1.5em;
+  margin-left: auto;
+}
+
+.container li {
+  margin-bottom: 0.75em;
+}
+
+/* Announcements Panel */
+
+.announcements {
+  border: none;
+  box-shadow: inset 0 0 10px #ddd;
+  padding: 1em;
+}
+
+.announcements .list-group-item {
+  padding: 0;
+}
+
+.announcements ul, .announcements ol {
+  margin: 0;
+}
+
+.announcements .list-group-item {
+  border: none;
+  background: none;
+}
+
+/* FAQ */
+
+.faq_question > a{
+    color:  #816853; /* dark cocoa */
+}
+
+.faq_question > a:hover, a:focus {
+    color:  inherit; /* dark cocoa */
+    text-decoration: underline;
+}
+
+.faq_question > a:before {
+    font-family: 'Glyphicons Halflings'; 
+    content: "\e114";   
+ }
+.faq_question > a.collapsed:before {
+     content: "\e080"; 
+}
+
+/* Table of contents */
+
+#toc {
+  padding-top: 1em;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.toc-wrapper ul {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+@media(max-width: 767px) {
+  .toc-column {
+    display: none;
+  }
+}
+
+/* Post signatures */
+
+p#attribution {
+	font-size: 90%;
+	text-align:right;
+	color: #666666;
+}
+
+/* Photo grids */
+
+.photo-grid {
+  display: inline-block;
+  vertical-align: bottom;
+  float: none;
+  margin-right: -15px;
+}
+
+.photo-grid .img-thumbnail {
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* Tables */
+
+table.whitebg td {
+    background-color: white;
+}
+
+td.weekheader {
+	background-color: #cccccc;
+  font-style: italic;
+  font-size: x-small;
+}
+
+span.post {
+  font-size: small;
+  font-style: italic;
+}
+
+
+/* Navigation */
+
+.navbar {
+  border-radius: 0;
+  padding-right: 1em;
+  font-size: 1.1em;
+  font-family: "Patua One";
+}
+.navbar-custom {
+  background-color: #840000;
+}
+.dropdown-menu {
+  font-size: 1em;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: white;
+  font-size: 1.3em;
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus {
+  color: #e6e6e6;
+  background-color: transparent;
+}
+.navbar-custom .navbar-nav > li > a {
+  color: white;
+}
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus {
+  color: #c0c0c0;
+  background-color: transparent;
+}
+.navbar-custom .navbar-nav > .active > a,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus {
+  /*color: #c0c0c0;
+  background-color: #630000;*/ /* this turns off the focus on non-menu choice */
+}
+.navbar-custom .navbar-nav > .disabled > a,
+.navbar-custom .navbar-nav > .disabled > a:hover,
+.navbar-custom .navbar-nav > .disabled > a:focus {
+  color: #cccccc;
+  background-color: transparent;
+}
+.navbar-custom .navbar-toggle {
+  border-color: #dddddd;
+}
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+  background-color: #dddddd;
+}
+.navbar-custom .navbar-toggle .icon-bar {
+  background-color: #cccccc;
+}
+.navbar-custom .navbar-collapse,
+.navbar-custom .navbar-form {
+  border-color: #600000;
+}
+.navbar-custom .navbar-nav > .dropdown > a:hover .caret,
+.navbar-custom .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #c0c0c0;
+  border-bottom-color: #c0c0c0;
+}
+.navbar-custom .navbar-nav > .open > a,
+.navbar-custom .navbar-nav > .open > a:hover,
+.navbar-custom .navbar-nav > .open > a:focus {
+  background-color: #630000;
+  color: #c0c0c0;
+}
+.navbar-custom .navbar-nav > .open > a .caret,
+.navbar-custom .navbar-nav > .open > a:hover .caret,
+.navbar-custom .navbar-nav > .open > a:focus .caret {
+  border-top-color: #c0c0c0;
+  border-bottom-color: #c0c0c0;
+}
+.navbar-custom .navbar-nav > .dropdown > a .caret {
+  border-top-color: white;
+  border-bottom-color: white;
+}
+@media (max-width: 767px) {
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #c0c0c0;
+    background-color: transparent;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #c0c0c0;
+    background-color: #630000;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #cccccc;
+    background-color: transparent;
+  }
+  #search-query .btn {
+    display: none; /* No need for form submit button on mobile */
+  }
+}
+.navbar-custom .navbar-link {
+  color: #ffffff;
+}
+.navbar-custom .navbar-link:hover {
+  color: #c0c0c0;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"><script async="" src="a_data_002/apstag.js"></script><script src="prompt.js"></script><script src="runScript.js"></script><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nested Iframe</title>
+                    <script>
+                        let apstagInitialized = false;
+    
+                        function init({pubID, adServer, videoAdServer, sellerId}) {
+                            if (!apstagInitialized) {
+                                (function (a9, a, p, s, t, A, g) {
+                                    if (a[a9]) return;
+                                    function q(c, r) {
+                                        a[a9]._Q.push([c, r]);
+                                    }
+                                    a[a9] = {
+                                        init: function () {
+                                            q("i", arguments);
+                                        },
+                                        fetchBids: function () {
+                                            q("f", arguments);
+                                        },
+                                        setDisplayBids: function () {},
+                                        targetingKeys: function () {
+                                            return [];
+                                        },
+                                        _Q: [],
+                                    };
+                                    A = p.createElement(s);
+                                    A.async = !0;
+                                    A.src = t;
+                                    g = p.getElementsByTagName(s)[0];
+                                    g.parentNode.insertBefore(A, g);
+                                })(
+                                    "apstag",
+                                    window,
+                                    document,
+                                    "script",
+                                    "https://c.amazon-adsystem.com/aax2/apstag.js"
+                                );
+    
+                                const initConfig = {
+                                    pubID: pubID,
+                                    videoAdServer: videoAdServer,
+                                    adServer: adServer
+                                };
+    
+                                if (sellerId) {
+                                    initConfig.schain = {
+                                        complete: 1,
+                                        ver: '1.0',
+                                        nodes: [
+                                            {
+                                                asi: 'playstream.media',
+                                                sid: `${sellerId}`,
+                                                hp: 1,
+                                            }
+                                        ]
+                                    };
+                                }
+    
+                                apstag.init(initConfig);
+                                apstagInitialized = true;
+                            }
+                        }
+    
+                        function fetchBids({slotID, mediaType, sizes, handleBidResponse, minCpm}) {
+                            if (apstagInitialized) {
+                                apstag.fetchBids(
+                                    {
+                                        slots: [
+                                            {
+                                                slotID: slotID,
+                                                mediaType: mediaType,
+                                                floor: {
+                                                    currency: 'USD',
+                                                    value: minCpm * 100,
+                                                },
+                                            },
+                                        ],
+                                        timeout: 2500
+                                    },
+                                    function (bids) {
+                                        handleBidResponse(bids);
+                                    }
+                                );
+                            } else {
+                                console.error("apstag not initialized");
+                            }
+                        }
+                    </script>
+                    <script src="prompt_002.js"></script><script src="a_data_002/5d8ed25e-57cc-441a-b62a-127b34faae4e" type="text/javascript" async="async"></script></head>
+                    <body>
+                    
+                    
+                </body></html>

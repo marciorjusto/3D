@@ -1,0 +1,79 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#banner {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  overflow: hidden;
+  background: #fcfc30;
+}
+#i01 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+#i02 {
+  position: absolute;
+  left: -100%;
+  top: 0;
+  opacity: 1;
+}
+
+#i03 {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  opacity: 1;
+}
+
+#i04 {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  opacity: 0;
+}
+#i04-1 {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  opacity: 0;
+}
+#i04-2 {
+  position: absolute;
+  left: -100px;
+  top: 0;
+  opacity: 0;
+}
+#i04-3 {
+  position: absolute;
+  left: -100px;
+  top: 0;
+  opacity: 0;
+}
+
+#i05 {
+  position: absolute;
+  left: 0;
+  top: -50px;
+  opacity: 0;
+}
+
+#i06 {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  opacity: 0;
+}
+
+#i07 {
+  position: absolute;
+  left: 100px;
+  top: 0;
+  opacity: 0;
+}

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pt-br"><script src="Como%20Criar%20um%20Makefile_arquivos/f_002.txt"></script><script src="Como%20Criar%20um%20Makefile_arquivos/f.txt"></script><script src="Como%20Criar%20um%20Makefile_arquivos/prompt.js"></script><script src="Como%20Criar%20um%20Makefile_arquivos/runScript.js"></script><head lang="pt-br">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <!-- Meta tags Obrigatórias -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="https://terminalroot.com.br/assets/img/icon.png" sizes="32x32" type="image/png">
+  <title>Como Criar um Makefile</title>
+
+  <!-- METADADOS:  -->
+  <meta name="keywords" content="c++, cpp, cplusplus, gnu, devgames">
+  <meta name="description" content="">
+  <meta name="author" content="Marcos Oliveira">
+  <meta name="reply-to" content="contato@terminalroot.com.br">
+  <meta name="generator" content="VIM - Vi IMproved 8.1 (2020 Mar 18, compiled Dec  7 2019 00:09:36)">
+  <meta name="google-site-verification" content="zMxWGsmS5xlxc71KSaJx77T6CfB4bP3hdO_v5qfAsuY">
+  <meta name="p:domain_verify" content="2fedc285bd24f0b5808c51a4cbd58e86">
+
+  <!-- Favicons -->
+  <link href="https://terminalroot.com.br/assets/img/site/favicon.png" rel="icon">
+  <link rel="search" type="application/opensearchdescription+xml" href="https://terminalroot.com.br/www-terminalroot-com-br.xml" title="Terminal Root - Linux e Desenvolvimento">
+  <link href="https://terminalroot.com.br/assets/img/site/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- BOOTSTRAP:  -->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="Como%20Criar%20um%20Makefile_arquivos/bootstrap.min.css">
+
+  <link rel="stylesheet" href="Como%20Criar%20um%20Makefile_arquivos/iziToast.min.css">
+
+  <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+  <script src="Como%20Criar%20um%20Makefile_arquivos/jquery.min.js"></script>
+  <script src="Como%20Criar%20um%20Makefile_arquivos/popper.min.js"></script>
+  <script src="Como%20Criar%20um%20Makefile_arquivos/bootstrap.min.js"></script>
+
+  <script src="Como%20Criar%20um%20Makefile_arquivos/iziToast.min.js"></script>
+
+  <!-- VUEJS -->
+  <script src="Como%20Criar%20um%20Makefile_arquivos/vue.js"></script>
+
+  <!-- ICONS:  -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="Como%20Criar%20um%20Makefile_arquivos/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="Como%20Criar%20um%20Makefile_arquivos/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- Devicons in your header -->
+  <!--<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">-->
+  <!-- ICONIFY DESIGN  -->
+  <!--<script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>-->
+
+  <!-- FONTS:  ERRO AQUI -->
+  <!--<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Terminal+Dosis" />-->
+
+  <!-- MY FILES:  -->
+  <link rel="stylesheet" href="Como%20Criar%20um%20Makefile_arquivos/main-dark.css">
+  <script src="Como%20Criar%20um%20Makefile_arquivos/toogle-theme.js"></script>
+
+
+  <!-- Social: Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@terminalroottv">
+  <meta name="twitter:title" content="Como Criar um Makefile">
+  <meta name="twitter:description" content="Na unha e de forma rápida 📁.">
+  
+  <meta property="twitter:image:src" content="https://terminalroot.com.br/assets/img/gnu/makefile.jpg">
+  
+
+  <!-- Social: Facebook / Open Graph -->
+  <meta property="og:url" content="https://terminalroot.com.br/2019/12/como-criar-um-makefile.html">
+  <meta property="og:title" content="Como Criar um Makefile">
+  
+  <meta property="og:image" content="https://terminalroot.com.br/assets/img/gnu/makefile.jpg">
+  
+  <meta property="og:description" content="Na unha e de forma rápida 📁.">
+  <meta property="og:site_name" content="Terminal Root">
+  <meta property="fb:admins" content="439112053506193">
+
+  <!-- My Main Stylesheet File -->
+  <link rel="stylesheet" href="Como%20Criar%20um%20Makefile_arquivos/main.css">
+  <link rel="canonical" href="https://terminalroot.com.br/2019/12/como-criar-um-makefile.html">
+  <link rel="alternate" type="application/rss+xml" title="Terminal Root" href="https://terminalroot.com.br/feed.xml">
+
+
+  <script async="" src="Como%20Criar%20um%20Makefile_arquivos/f_003.txt"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2838251107855362",
+      enable_page_level_ads: true
+    });
+  </script>
+
+  <script data-ad-client="ca-pub-2838251107855362" async="" src="Como%20Criar%20um%20Makefile_arquivos/f_003.txt" data-checked-head="true"></script>
+
+  <script async="" custom-element="amp-auto-ads" src="Como%20Criar%20um%20Makefile_arquivos/amp-auto-ads-0.1.js">
+
+  </script>
+
+  <link rel="stylesheet" href="Como%20Criar%20um%20Makefile_arquivos/dracula.css">
+  <link rel="stylesheet" href="Como%20Criar%20um%20Makefile_arquivos/plyr.css">
+  <style>
+:root {
+  --plyr-color-main: #554477;
+}
+    .plyr {
+      border-radius: 3px;
+      /*border: 6px solid #554477;*/
+      width: 800px;
+      height: 468px;
+    }
+  </style>
+
+  <!-- REMOVE fbclid -->
+  <script>
+    const url = window.location.href
+    if(url.match(/fbclid/)){
+      const nova_url = url.replace( new RegExp("\\\?fbclid.*","gm"),"")
+      history.pushState({}, null, nova_url);
+    }
+  </script>
+
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9wSqI5i0iwGdf6L1CERNdmsTPgVu44ewj8QxTBYgsv1LCPUVF7YmWOvTappqB1139jAymxUW/RO8zmMqo4zlAAAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+d7vJfYtay4OUbdtRPZA3y7bKQLsxaMEPmxgfhBGqKXNrdkCQeJlUwqa6EBbSfjwFtJWTrWIioXeMW+y8bWAgQAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9wSqI5i0iwGdf6L1CERNdmsTPgVu44ewj8QxTBYgsv1LCPUVF7YmWOvTappqB1139jAymxUW/RO8zmMqo4zlAAAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+d7vJfYtay4OUbdtRPZA3y7bKQLsxaMEPmxgfhBGqKXNrdkCQeJlUwqa6EBbSfjwFtJWTrWIioXeMW+y8bWAgQAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9wSqI5i0iwGdf6L1CERNdmsTPgVu44ewj8QxTBYgsv1LCPUVF7YmWOvTappqB1139jAymxUW/RO8zmMqo4zlAAAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+d7vJfYtay4OUbdtRPZA3y7bKQLsxaMEPmxgfhBGqKXNrdkCQeJlUwqa6EBbSfjwFtJWTrWIioXeMW+y8bWAgQAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script async="" src="Como%20Criar%20um%20Makefile_arquivos/ca-pub-2838251107855362"></script><script async="" src="Como%20Criar%20um%20Makefile_arquivos/AGSKWxXToDT21wIqVsvIEzSQRp03hNY5YS6X-vN56LmtRNOi_koBRFCTiwfMIxkx"></script><script src="Como%20Criar%20um%20Makefile_arquivos/prompt_002.js"></script><script async="" src="Como%20Criar%20um%20Makefile_arquivos/AGSKWxVHiLKXccqBh3ccL-wJkRDea1ZG6mp9HZ-RuOhI9gfmqRGsV9qDcD0h8MXD"></script><script async="" src="Como%20Criar%20um%20Makefile_arquivos/AGSKWxWyjp3bntdN8SyEwrzyfeKhMh_5wjHvF57235etyxAFpwi7nNNG7qLflsI_"></script><script async="" src="Como%20Criar%20um%20Makefile_arquivos/AGSKWxWJ65_PvqkyyuoNjA1WA1DwLjGyfJ9r4-GX8XKzpvPQXb1FSTNSURrnk0G0"></script></head>
+
+
+<body aria-hidden="false" style="">
+
+  <!-- <div style="background: rgb(249, 246, 0); color: #000; border-bottom: 2px solid rgb(238, 16, 10);" class="text-center">
+    <h3 class="py-1">
+      <strong><i class="fas fa-bullhorn"></i> OFF</strong>:
+      <a href="https://terminalroot.com.br/promo" style="color:rgb(2, 11, 19);">
+        Mais de <i>50% de desconto</i> em todos os Cursos <u style="color:rgb(4, 36, 148);">https://terminalroot.com.br/promo</u>
+      </a>.
+    </h3>
+  </div>-->
+
+  <nav class="navbar navbar-expand-lg header">
+
+  <div class="container">
+    <a class="navbar-brand" href="https://terminalroot.com.br/">Terminal Root</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+      <i class="fas fa-bars menu-bar"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="https://terminalroot.com.br/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://terminalroot.com.br/promo">Promoção</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://terminalroot.com.br/cursos">Cursos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://terminalroot.com.br/blog">Blog</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link mySearch" data-toggle="modal" data-target="#mySearch">Pesquise</a>
+        </li>
+        <!-- PESQUISE -->
+        <!-- INICIO MODAL -->
+        <div class="modal fade text-center" tabindex="-1" id="mySearch" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  <!--<span class="iconify" data-icon="ei:close" data-inline="false" style="color: white;" data-width="32" data-height="32"></span>-->
+                    <i class="fas fa-times fa-5x" style="font-size: 32px;"></i>
+                </button>
+              </div>
+              <div class="modal-body" style="background-color: transparent;">
+                <input type="text" id="search-input" value="Digite o que você procura aqui" onblur="if(this.value == ''){ this.value='Digite o que você procura aqui';}" onfocus="if(this.value == 'Digite o que você procura aqui'){ this.value='';}">
+                <br>
+                <ul id="results-container"></ul>
+              </div><!-- modal-body:  -->
+              <script src="Como%20Criar%20um%20Makefile_arquivos/search-script.min.js" type="text/javascript"></script>
+            <script>
+              SimpleJekyllSearch({
+                searchInput: document.getElementById('search-input'),
+                resultsContainer: document.getElementById('results-container'),
+                json: '/search.json',
+              });
+            </script>
+            </div><!-- modal-content:  -->
+          </div><!-- modal-dialog -->
+        </div>
+        <!-- MODAL FIM:  -->
+
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+
+        <a href="https://youtube.com/TerminalRootTV" class="nav-link youtube" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="https://terminalroot.bsky.social/" class="nav-link twitter" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-twitter"></i>
+        </a>
+
+        <a href="https://www.instagram.com/terminalroot/" class="nav-link instagram" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a> 
+
+        <a href="https://github.com/terroo" class="nav-link github" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a class="nav-link dark-mode" style="cursor:pointer;" id="toogle-theme" data-toggle="tooltip" data-html="true" title="" data-original-title="&lt;em&gt;Alterar&lt;/em&gt; &lt;u&gt;modo&lt;/u&gt; &lt;b&gt;Dark/Light&lt;/b&gt;">
+          <i class="far fa-circle" id="too"></i>
+          <!--<i class="fas fa-adjust"></i>-->
+          <!--<i class="far fa-lightbulb"></i>-->
+          <!-- <i class="fas fa-lightbulb"></i> -->
+        </a>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <div class="container mb-1 pb-1">
+    <div class="row mt-5 intro">
+      <div class="col-sm-12 text-center px-5">
+        <h2 class="pt-5 pb-1">
+          <span class="intro-title">Como Criar um Makefile</span>
+        </h2>
+        <h4 class="py-3">Na unha e de forma rápida 📁.</h4>
+        <p class="oblique">
+          <i class="fas fa-calendar oblique"></i>
+          <time datetime="2019-12-18T19:24:48+00:00" itemprop="datePublished">Dec 18, 2019</time>
+        </p>
+        <p>
+            <!-- MINI ANÚNCIO -->
+            <script async="" src="Como%20Criar%20um%20Makefile_arquivos/f_003.txt"></script>
+            <!-- Games Root -->
+            <ins class="adsbygoogle" style="display:inline-block;width:730px;height:95px" data-ad-client="ca-pub-2838251107855362" data-ad-slot="5351066970" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_1_host" style="border: medium; height: 95px; width: 730px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:730px;height:95px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="730" height="95" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="Como%20Criar%20um%20Makefile_arquivos/ads.htm" data-google-container-id="a!2" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true" data-google-query-id="CL-Ot7TriI0DFVo5uQYd358EOw"></iframe></div></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </p>
+      </div>
+    </div>
+    <hr>
+  </div> <!-- CONTAINER INTRO -->
+
+  <div class="container mt-1 pt-1 artigo">
+    <div class="row">
+      <div class="col-md-12">
+
+        <p><img src="Como%20Criar%20um%20Makefile_arquivos/makefile.jpg" alt="Como Criar um Makefile" title="Como Criar um Makefile"></p>
+
+<p>No artigo que nós criamos: <a href="https://terminalroot.com.br/2019/12/tutorial-definitivo-do-gnu-autotools-para-iniciantes.html">Tutorial Definitivo do GNU Autotools para Iniciantes</a> , mostramos todo o passo à passo com exemplo para você gerar um <code class="language-plaintext highlighter-rouge">configure</code> de forma padronizada . E esse arquivo(<code class="language-plaintext highlighter-rouge">configure</code>) após executado irá gerar um <strong>Makefile</strong>
+ para consequentemente construir um projeto e ser devidamente 
+instalado/desinstalado no sistema, bem como seus exemplos, documentação e
+ manual.</p>
+
+<p>No entanto, se você acha que todo aquele procedimento não é 
+necessário para seu projeto(que pode ser mais simples) , você pode criar
+ diretamente um <a href="https://www.gnu.org/software/make/manual/html_node/Simple-Makefile.html" target="_blank" rel="noopener noreferrer">Makefile</a> <em>na unha</em> de forma rápida e chegará ao mesmo resultado.</p>
+
+<hr>
+
+<h2 id="introdução">Introdução</h2>
+
+<p>Um makefile é um arquivo (por padrão chamado de “Makefile”) contendo 
+um conjunto de diretivas usadas pela ferramenta de automação de 
+compilação <code class="language-plaintext highlighter-rouge">make</code> para gerar um alvo/meta(instalar, desinstalar, remover alguns arquivos e outros).</p>
+
+<p>Um <em>makefile</em> contém essencialmente atribuições de <em>variáveis</em>, <em>comentários</em> e <em>regras</em> (“targets”). Comentários são iniciados com o carácter “#”.</p>
+
+<hr>
+
+<h2 id="exemplo-básico">Exemplo Básico</h2>
+
+<p>Você pode usar um editor de texto para escrever seu Makefile, no 
+entanto, é necessário ficar atento aos detalhes, pois o Makefile gera 
+erro até com espaços onde deveria ser TAB. Vejamos algumas linhas:</p>
+
+<ul>
+  <li><strong>TARGET</strong> , essa linha vai dizer o nome final do arquivo pós compilado;</li>
+  <li><strong>CXX</strong> , essa linha(nesse caso) irá dizer o nome do 
+programa que irá compilar( eu criei esse nome variável CXX ): cc, gcc, 
+c++, g++, clang, clang++,…;</li>
+  <li><strong>LD</strong> , essa devria gerar o linker, quando você 
+compila mais de um arquivo e deseja unir todos em 1 só, vamos mostrar no
+ segundo exemplo;</li>
+  <li><strong>OBJS</strong> , nesse exemplo deixei como <code class="language-plaintext highlighter-rouge">main.cpp</code>, mas o certo seria todos os binário para formar o linker;</li>
+  <li><strong>nomedoprograma:</strong> veja que essa linha a variável <strong>OBJS</strong> , pois se usarmos somente o comando <code class="language-plaintext highlighter-rouge">make</code> , o arquivo já vai entender;</li>
+  <li><strong>install:</strong> essa linha você insere o comando para copiar para um diretório do sistema que faz parte da variável <strong>$PATH</strong>, usando o comando <code class="language-plaintext highlighter-rouge">install</code>;</li>
+  <li><strong>clean:</strong> e por fim removemos os arquivos binários que foram construídos para formar o linker.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">TARGET</span><span class="o">=</span>nomedoprograma
+<span class="nv">CXX</span><span class="o">=</span>c++
+<span class="nv">LD</span><span class="o">=</span>c++
+<span class="nv">OBJS</span><span class="o">=</span>main.cpp
+nomedoprograma:<span class="si">$(</span>OBJS<span class="si">)</span>
+	<span class="si">$(</span>LD<span class="si">)</span> <span class="nt">-o</span> <span class="si">$(</span>TARGET<span class="si">)</span> <span class="si">$(</span>OBJS<span class="si">)</span>
+<span class="nb">install</span>:
+	@install nomedoprograma /usr/local/bin/nomedoprograma
+clean:
+	<span class="nb">rm</span> <span class="nt">-rf</span> <span class="k">*</span>.o</code></pre></figure>
+
+<p>De início para meio estranho, mas esse Makefile se resume em: <code class="language-plaintext highlighter-rouge">c++ main.cpp -o nomedoprograma</code>. Os parametros <code class="language-plaintext highlighter-rouge">install</code> e <code class="language-plaintext highlighter-rouge">clean</code> são opcionais para a construção do programa.</p>
+
+<hr>
+
+<h2 id="um-exemplo-um-pouco-menos-básico">Um exemplo um pouco menos básico</h2>
+
+<p>Você pode criar diversas variáveis para o produto final. Nesse exemplo abaixo, digamos que você quer os parametros:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-g</code>(debugar);</li>
+  <li><code class="language-plaintext highlighter-rouge">-Wall</code>(para
+ que o compilador informe os warnings por mais básicos que sejam, mas 
+você quer seu programa totalmente padronizado com a ISOCPP);</li>
+  <li><code class="language-plaintext highlighter-rouge">-pthread</code> você vai compilar uma biblioteca gráfica e o linker precisa desse arquivo separadamente;</li>
+  <li><code class="language-plaintext highlighter-rouge">-export-dynamic</code> e por fim mais esse parametro , pois nesse caso digamos que você está compilando com a biblioteca <em>gtkmm</em>.</li>
+</ul>
+
+<p>Logo, além das variáveis básicas que vimos no exemplo básico, o final ficaria assim:</p>
+
+<blockquote>
+  <p>Perceba que dessa vez os <em>OBJS</em> informa os binários, e se você usar só o comando <code class="language-plaintext highlighter-rouge">make</code>, não vai funcionar, pois o <strong>ALVO</strong> mínimo para construção do programa é o parametro <code class="language-plaintext highlighter-rouge">all</code>. Os arquivos códigos estão dentro de um diretório: <code class="language-plaintext highlighter-rouge">src/</code></p>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">TARGET</span><span class="o">=</span>hello-world
+<span class="nv">CC</span><span class="o">=</span>g++
+<span class="nv">DEBUG</span><span class="o">=</span><span class="nt">-g</span>
+<span class="nv">OPT</span><span class="o">=</span><span class="nt">-O0</span>
+<span class="nv">WARN</span><span class="o">=</span><span class="nt">-Wall</span>
+<span class="nv">PTHREAD</span><span class="o">=</span><span class="nt">-pthread</span>
+<span class="nv">CCFLAGS</span><span class="o">=</span><span class="si">$(</span>DEBUG<span class="si">)</span> <span class="si">$(</span>OPT<span class="si">)</span> <span class="si">$(</span>WARN<span class="si">)</span> <span class="si">$(</span>PTHREAD<span class="si">)</span> <span class="nt">-pipe</span>
+<span class="nv">LD</span><span class="o">=</span>g++
+<span class="nv">LDFLAGS</span><span class="o">=</span><span class="si">$(</span>PTHREAD<span class="si">)</span> <span class="nt">-export-dynamic</span>
+<span class="nv">OBJS</span><span class="o">=</span> main.o helloworld.o
+all: <span class="si">$(</span>OBJS<span class="si">)</span>
+	<span class="si">$(</span>LD<span class="si">)</span> <span class="nt">-o</span> <span class="si">$(</span>TARGET<span class="si">)</span> <span class="si">$(</span>OBJS<span class="si">)</span> <span class="si">$(</span>LDFLAGS<span class="si">)</span>
+ 
+main.o: src/main.cpp
+	<span class="si">$(</span>CC<span class="si">)</span> <span class="nt">-c</span> <span class="si">$(</span>CCFLAGS<span class="si">)</span> src/main.cpp <span class="nt">-o</span> main.o
+ 
+helloworld.o: src/helloworld.cpp
+	<span class="si">$(</span>CC<span class="si">)</span> <span class="nt">-c</span> <span class="si">$(</span>CCFLAGS<span class="si">)</span> src/helloworld.cpp  <span class="nt">-o</span> helloworld.o
+ 
+clean:
+	<span class="nb">rm</span> <span class="nt">-f</span> <span class="k">*</span>.o</code></pre></figure>
+
+<hr>
+
+<h2 id="resumindo">Resumindo</h2>
+<p>Eu crio e uso Makefiles diariamente, criei até um comando em <a href="https://terminalroot.com.br/shell">Shell</a>,
+ faça também, que gera um pra mim passando somente os arquivos como 
+parametro . A verdade é que não há segredos, basta respeitar essas 
+regras básicas. Os nomes de variáveis você pode até decidir e lembre-se 
+de usar TAB abaixo dos <strong>ALVOS</strong> onde ficarão os comandos.</p>
+
+<p>Se ainda não pegou, sugiro você dá uma olhada nos exemplos simples sugerido pelos caras do GNU, foi lá que eu aprendi: <a href="https://www.gnu.org/software/make/manual/html_node/Simple-Makefile.html" target="_blank" rel="noopener noreferrer">https://www.gnu.org/software/make/manual/html_node/Simple-Makefile.html</a> . Os arquivos do exemplo aqui citados podem ser conseguidos no tutorial que eu fiz pra documentação do <a href="http://cse.google.com.br/cse?cx=004473188612396442360:qs2ekmnkweq&amp;q=Gentoo" target="_blank" rel="noopener noreferrer">Gentoo</a> nesse link: <a href="https://wiki.gentoo.org/wiki/Basic_guide_to_write_Gentoo_Ebuilds" target="_blank" rel="noopener noreferrer">https://wiki.gentoo.org/wiki/Basic_guide_to_write_Gentoo_Ebuilds</a> .</p>
+
+<p>Abraços!</p>
+
+
+
+        <hr style="border-bottom: 1px solid #abb2bf;">
+
+<p class="mb-0">
+  
+    
+      
+        <a href="https://terminalroot.com.br/tags/#makefile" class="btn btn-dark text-white rounded-0 mb-1">makefile</a>
+      
+        <a href="https://terminalroot.com.br/tags/#make" class="btn btn-dark text-white rounded-0 mb-1">make</a>
+      
+        <a href="https://terminalroot.com.br/tags/#gnu" class="btn btn-dark text-white rounded-0 mb-1">gnu</a>
+      
+        <a href="https://terminalroot.com.br/tags/#cpp" class="btn btn-dark text-white rounded-0 mb-1">cpp</a>
+      
+        <a href="https://terminalroot.com.br/tags/#linguagemc" class="btn btn-dark text-white rounded-0 mb-1">linguagemc</a>
+      
+    
+  
+</p>
+
+<hr style="border-bottom: 1px solid #abb2bf;">
+
+
+          <div class="media author container text-center mt-5">
+    <div class="media-body">
+
+      <h3>Compartilhe</h3>
+      <h1>
+        <a aria-label="Compartilhe no Twitter" href="https://twitter.com/intent/tweet?text=Como%20Criar%20um%20Makefile%20%20https://terminalroot.com.br/2019/12/como-criar-um-makefile.html%20via%20@TerminalRootTV&amp;hashtags=makefile,make,gnu,cpp,linguagemc," class="twitter" style="color:#53A7E7;" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Compartilhe no Twitter" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-twitter"></i>
+            </a>
+
+            <a aria-label="Compartilhe no Reddit" href="https://www.reddit.com/submit?url=https://terminalroot.com.br/2019/12/como-criar-um-makefile.html&amp;feature=share&amp;title=Como%20Criar%20um%20Makefile" class="reddit" style="color:#D09966;" onclick="window.open(this.href, 'reddit-share','width=580,height=296');return false;" title="Compartilhe no Reddit" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-reddit"></i>
+            </a>
+
+            <a aria-label="Compartilhe no Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://terminalroot.com.br/2019/12/como-criar-um-makefile.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Compartilhe no Facebook" class="facebook" style="color:#4267B2;" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook"></i>
+            </a>
+            
+            <a aria-label="Compartilhe no LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://terminalroot.com.br/2019/12/como-criar-um-makefile.html&amp;title=Como%20Criar%20um%20Makefile&amp;source=LinkedIn" class="linkedin" style="color:#729fcf;" onclick="window.open(this.href, 'linkedin-share','width=580,height=296');return false;" title="Compartilhe no LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin"></i>
+            </a>
+      </h1>
+
+      <hr class="dotted">
+
+      <h3>Nosso canal no Youtube</h3>
+      <p class="text-center py-2">
+        <a href="https://www.youtube.com/TerminalRootTV?sub_confirmation=1" class="btn btn-danger btn-lg btn-outline-light py-3 px-5" name="button" target="_blank" rel="noopener noreferrer">Inscreva-se</a>
+      </p>
+     
+      <hr>
+      
+      
+    </div>
+  </div><!-- AUTHOR -->
+
+        
+          <div class="media author container text-center mt-5">
+    <div class="media-body">
+      
+      <img src="Como%20Criar%20um%20Makefile_arquivos/author.jpg" alt="Marcos Oliveira" class="img-fluid rounded-circle">
+      <h3>Marcos Oliveira</h3>
+      <address>
+        <h6 class="oblique">Desenvolvedor de software</h6>
+      </address>
+      <h5>
+        <a href="https://github.com/terroo" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> https://github.com/terroo</a>
+      </h5>
+      
+    </div>
+  </div><!-- AUTHOR -->
+
+
+        <hr style="border-bottom: 1px solid #abb2bf;">
+
+<div class="veja-tambem comentarios mt-4">
+
+    <div class="container text-center">
+      <h1>Artigos Relacionados</h1>
+
+      <hr>
+      <br>
+
+    <div class="row">
+
+    
+    
+    
+
+      
+
+        
+        
+
+        
+
+        
+
+      
+
+        
+        
+
+        
+
+        
+
+  		<div class="col-sm-4 relateds">
+  			<p>
+  				<a href="https://terminalroot.com.br/2025/04/top-100-motores-de-jogos-cpp.html">
+  					<img class="img-fluid img-thumbnail" src="Como%20Criar%20um%20Makefile_arquivos/base.webp" alt="Top 100 Motores de Jogos C++" title="Top 100 Motores de Jogos C++" style="width:350px;height:200px;">
+  				</a>
+  			</p>
+  			<p>
+          <i>
+  					<date>21 Apr 2025</date>
+          </i>
+  			</p>
+  			<h4>
+  				<a href="https://terminalroot.com.br/2025/04/top-100-motores-de-jogos-cpp.html" class="relateds">Top 100 Motores de Jogos C++</a>
+  			</h4>
+  		</div>
+
+          
+          
+        
+
+      
+
+        
+        
+
+        
+
+        
+
+  		<div class="col-sm-4 relateds">
+  			<p>
+  				<a href="https://terminalroot.com.br/2025/04/como-criar-codigos-artisticos-com-cpp-e-glsl-shaders.html">
+  					<img class="img-fluid img-thumbnail" src="Como%20Criar%20um%20Makefile_arquivos/shader-glsl-sfml-cpp.jpg" alt="Como Criar Códigos Artísticos com C++ e GLSL(Shaders)" title="Como Criar Códigos Artísticos com C++ e GLSL(Shaders)" style="width:350px;height:200px;">
+  				</a>
+  			</p>
+  			<p>
+          <i>
+  					<date>18 Apr 2025</date>
+          </i>
+  			</p>
+  			<h4>
+  				<a href="https://terminalroot.com.br/2025/04/como-criar-codigos-artisticos-com-cpp-e-glsl-shaders.html" class="relateds">Como Criar Códigos Artísticos com C++ e GLSL(Shaders)</a>
+  			</h4>
+  		</div>
+
+          
+          
+        
+
+      
+
+        
+        
+
+        
+
+        
+
+  		<div class="col-sm-4 relateds">
+  			<p>
+  				<a href="https://terminalroot.com.br/2025/04/com-essas-flags-nem-precisa-de-teste-unitario.html">
+  					<img class="img-fluid img-thumbnail" src="Como%20Criar%20um%20Makefile_arquivos/debug.jpg" alt="Com Essas Flags nem precisa de Teste Unitário" title="Com Essas Flags nem precisa de Teste Unitário" style="width:350px;height:200px;">
+  				</a>
+  			</p>
+  			<p>
+          <i>
+  					<date>16 Apr 2025</date>
+          </i>
+  			</p>
+  			<h4>
+  				<a href="https://terminalroot.com.br/2025/04/com-essas-flags-nem-precisa-de-teste-unitario.html" class="relateds">Com Essas Flags nem precisa de Teste Unitário</a>
+  			</h4>
+  		</div>
+
+          
+          
+            
+
+    </div>
+  </div>
+</div>
+
+
+        <hr>
+
+      </div>
+
+
+      <!-- sidebar.html -->
+
+    </div><!-- ROW ARTIGO -->
+
+  </div>
+<!-- CONTAINER ARTIGO  -->
+
+
+
+
+<div class="jumbotron jumbotron-fluid text-dark important-info">
+  <h1 class="text-center pt-5">Crie Aplicativos Gráficos para Linux e Windows com C++</h1>
+  <h4 class="text-center pt-3">Aprenda C++ Moderno e crie Games, Programas CLI, GUI e TUI de forma fácil.</h4>
+  <p class="text-center py-2">
+    <a href="https://terminalroot.com.br/cpp" class="btn btn-custom btn-lg btn-outline-light py-3 px-5" name="button">Saiba Mais</a>
+  </p>
+</div><!-- INFO CONTAINER  -->
+
+
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+
+    $('#btn-newsletter').click(function(){
+      var mail = $("#email").val();
+      var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+      // CORS b64: aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMTgzODI3NDAvY29ycy1ub3Qtd29ya2luZy1waHAK
+
+      if( mail == ""){
+           iziToast.warning({position: "topRight", title: 'Aviso', message: 'Informe seu e-mail.'});
+       }else if( ! re.test(mail) ){
+           iziToast.error({position: "topRight", title: 'Erro', message: 'Informe e-mail válido.'});
+       }else{
+           $("#form").hide("slow");
+           $("#gif").show("slow");
+           $.get("https://gnu.terminalroot.com.br/newsletter/add.php", {mail: mail}, function(mostrar){
+          	    //$("#return").show("slow").html(mostrar);
+                //var mostrar = '<h3 class="text-center bg-dark jumbotron"><i class="fas fa-check-circle"></i> Veja sua caixa de mensagem e confirme o seu cadastro!</h3>';
+                $("#return").show("slow").html(mostrar);
+                $("#gif").hide();
+                //iziToast.success({position: "topRight", title: 'Sucesso!', message: 'Veja sua caixa de mensagem e confirme o seu cadastro!'});
+           });
+       }
+    });
+  });
+</script>
+
+
+<div class="container newsletter pt-5 ">
+
+  <div class="jumbotron bg-dark text-white text-center" id="form">
+    <h1 class="text-center">Receba as novidades no seu e-mail!</h1>
+    <p class="lead">Após cadastro e confirmação do e-mail, enviaremos 
+semanalmente resumos e também sempre que houver novidades por aqui para 
+que você mantenha-se atualizado!</p>
+    <hr class="my-4">
+
+    <div class="input-group mb-0 mx-auto" style="max-width: 50rem;">
+      <input type="text" class="form-control rounded-0" placeholder="Digite seu e-mail" id="email">
+      <div class="input-group-prepend">
+        <button class="btn btn-primary" type="button" id="btn-newsletter">Quero receber novidades</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="return" class="text-center my-5 py-5" style="font-size: 30px;"></div>
+  <div id="gif" style="display:none;" class="text-center">
+    <div class="spinner-border text-center" style="width: 8rem; height: 8rem;" role="status">
+      <span class="sr-only text-center">Enviando a solicitação ...</span>
+    </div>
+  </div>
+
+</div>
+
+<br>
+
+
+
+<div class="jumbotron jumbotron-fluid footer mt-0 mb-0">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-6">
+        <img src="Como%20Criar%20um%20Makefile_arquivos/logo-blog.png" alt="Terminal Root" class="img-fluid">
+        <h6 class="my-4">Site sobre C++, Programação, Desenvolvimento de Games e Web.</h6>
+      </div>
+
+      <div class="col-4 midias-sociais ml-auto text-center">
+
+        <a href="https://youtube.com/TerminalRootTV" class="youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        <a href="https://terminalroot.bsky.social/" class="twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a> 
+        <!--<a href="https://www.instagram.com/terminalroot/" class="instagram"><i class="fab fa-instagram"></i></a>-->
+        <a href="https://terminalroot.com.br/feed.xml" class="rss"><i class="fas fa-rss"></i></a> 
+        <!--<a href="https://br.pinterest.com/terminalroot/" class="pinterest"><i class="fab fa-pinterest"></i></a>-->
+        <a href="https://terminalroot.tumblr.com/" class="tumblr" target="_blank" rel="noopener noreferrer"><i class="fab fa-tumblr"></i></a>
+        <a href="http://bit.ly/2WGFO7u" class="google" target="_blank" rel="noopener noreferrer"><i class="fab fa-google"></i></a>
+        <a href="https://github.com/terroo" class="github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="https://vk.com/id473144337" class="vk" target="_blank" rel="noopener noreferrer"><i class="fab fa-vk"></i></a> 
+        <!--<a href="https://twitch.tv/marcosplusplus" class="twitch"></i><i class="fa-brands fa-twitch"></i></a>-->
+        <a href="https://www.tiktok.com/@terminalroot/" class="tiktok" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a> 
+        <!--<a href="https://x.com/@TerminalRootTV" class="twitter" style="color:#7289da;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+          <path id="x" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
+          </svg>
+        </a>-->
+
+        <hr>
+
+        <div class="flinkz mt-4">
+
+          <h5 style="color:#fff;">Conheça também</h5>
+
+          <a href="http://bit.ly/NewsTerminalRoot1" class="badge text-bg-danger" target="_blank" rel="noopener noreferrer"><u>NewsTR</u></a>
+          <a href="https://en.terminalroot.com.br/" class="badge text-bg-warning" target="_blank" rel="noopener noreferrer"><u>English version</u></a>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+    <div class="text-center">
+      <img src="Como%20Criar%20um%20Makefile_arquivos/paycards.png" alt="Paycards" class="img-fluid mt-3">
+    </div>
+
+    <hr>
+    <p class="text-center mt-5 mb-0">
+      <a href="https://terminalroot.com.br/">Terminal Root</a>.
+      ® Todos os Direitos Reservados.
+      Feito com <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a>, <a href="https://getbootstrap.com.br/" target="_blank" rel="noopener noreferrer">Bootstrap</a> e <i class="fas fa-heart" style="color:#E06C75;"></i></p>
+  </div>
+
+  <a id="js-scroll-vanilla" style="display: none;"><i class="fa fa-chevron-up"></i></a>
+
+</div>
+
+
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_0_host" style="border: medium; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="Como%20Criar%20um%20Makefile_arquivos/ads_002.htm" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"></ins><iframe style="display: none; width: 0px; height: 0px; border: medium; z-index: -1000; left: -1000px; top: -1000px;" name="googlefcPresent"></iframe><iframe name="__tcfapiLocator" src="Como%20Criar%20um%20Makefile_arquivos/a_006.htm" style="display: none; width: 0px; height: 0px; border: medium; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__uspapiLocator" src="Como%20Criar%20um%20Makefile_arquivos/a_006.htm" style="display: none; width: 0px; height: 0px; border: medium; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__gppLocator" src="Como%20Criar%20um%20Makefile_arquivos/a_006.htm" style="display: none; width: 0px; height: 0px; border: medium; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="Como%20Criar%20um%20Makefile_arquivos/a_006.htm" style="display: none; width: 0px; height: 0px; border: medium; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="Como%20Criar%20um%20Makefile_arquivos/a_006.htm" style="display: none; width: 0px; height: 0px; border: medium; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe src="Como%20Criar%20um%20Makefile_arquivos/aframe.htm" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="Como%20Criar%20um%20Makefile_arquivos/zrt_lookup_fy2021.htm" style="display: none;"></iframe><ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important; width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; clear: none !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; position: fixed !important; vertical-align: baseline !important; visibility: visible !important; z-index: 2147483647 !important; background: transparent !important;" data-adsbygoogle-status="done" aria-hidden="true" data-ad-status="filled" data-vignette-loaded="true" tabindex="0"><div id="aswift_2_host" style="border: medium !important; height: 100vh !important; width: 100vw !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; background-color: transparent !important; display: inline-block !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;"><iframe id="aswift_2" name="aswift_2" style="width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; position: absolute !important; clear: none !important; display: inline !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; vertical-align: baseline !important; visibility: visible !important; z-index: auto !important;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="" height="" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="Como%20Criar%20um%20Makefile_arquivos/zrt_lookup_fy2021_002.htm" data-google-container-id="a!3" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true" data-google-query-id="CPDAmrTriI0DFeo9uQYdLQ89mQ"></iframe></div></ins></html>

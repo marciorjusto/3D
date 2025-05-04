@@ -1,0 +1,350 @@
+#ps-main-container {
+    margin: auto;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.ps-main-container-test {
+    max-width: 640px;
+    max-height: 380px;
+}
+
+#ps-floating-space-container {
+    height: 0px;
+    width: 100%;
+}
+
+#ps-floating-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ps-floating-container-test {
+    height: 380px;
+}
+
+#ps-top-space {
+    height: 20px;
+    width: 100%;
+    position: relative;
+}
+
+#ps-close-button {
+    height: 15px;
+    width: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+}
+
+#ps-close-button span {
+    font-size: 10px;
+}
+
+.ps-close-button-left {
+    left: 0;
+}
+
+.ps-close-button-right {
+    right: 0;
+}
+
+#ps-label {
+    text-align: center;
+    font-size: 14px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ps-video-space {
+    overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    position: relative;
+    width: 100%;
+}
+
+.ps-video-space-top {
+    height: calc(100% - 20px);
+}
+
+.ps-video-space-bottom {
+    height: 100%;
+}
+
+#ps-video-space::-webkit-scrollbar {
+    display: none;
+}
+
+#ps-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#ps-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    z-index: 1;
+}
+
+#ps-close-button-timer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 10px;
+    border-radius: 0 0 5px 0;
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
+
+#ps-powered-by-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    display: flex;
+    top: 5px;
+    right: 5px;
+}
+
+#ps-powered-by-label span a {
+    display: block;
+    height: 15px;
+    width: 15px;
+}
+
+#ps-powered-by-label span a img {
+    height: 15px;
+    width: 15px;
+    object-fit: contain;
+}
+
+.ps-hidden-element {
+    visibility: hidden !important;
+}
+
+.ps-visible-element {
+    visibility: visible !important;
+}
+
+.ps-hide-element {
+    display: none !important;
+}
+
+.ps-show-element {
+    display: block !important;
+}
+
+.ps-sticky {
+    position: fixed !important;
+    z-index: 65124671134134 !important;
+    overflow: hidden !important;
+}
+
+.ps-right-top {
+    right: 0 !important;
+    top: 0 !important;
+    bottom: auto !important;
+    left: auto !important;
+}
+
+.ps-right-bottom {
+    right: 0 !important;
+    bottom: 0 !important;
+    top: auto !important;
+    left: auto !important;
+}
+
+.ps-left-top {
+    left: 0 !important;
+    top: 0 !important;
+    bottom: auto !important;
+    right: auto !important;
+}
+
+.ps-left-bottom {
+    left: 0 !important;
+    bottom: 0 !important;
+    top: auto !important;
+    right: auto !important;
+}
+
+.ps-top {
+    left: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+}
+
+.ps-bottom {
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    top: auto !important;
+}
+
+.ps-fadeInUp {
+    -webkit-animation-name: ps-fadeInUp;
+    animation-name: ps-fadeInUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.ps-fadeInLeftToRight {
+    -webkit-animation-name: ps-fadeInLeftToRight;
+    animation-name: ps-fadeInLeftToRight;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.ps-fadeInRightToLeft {
+    -webkit-animation-name: ps-fadeInRightToLeft;
+    animation-name: ps-fadeInRightToLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.ps-fadeInTopToBottom {
+    -webkit-animation-name: ps-fadeInTopToBottom;
+    animation-name: ps-fadeInTopToBottom;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes ps-fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes ps-fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@-webkit-keyframes ps-fadeInLeftToRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes ps-fadeInLeftToRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@-webkit-keyframes ps-fadeInRightToLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes ps-fadeInRightToLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@-webkit-keyframes ps-fadeInTopToBottom {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes ps-fadeInTopToBottom {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
